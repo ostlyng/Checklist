@@ -31,7 +31,14 @@
                             <outlet property="delegate" destination="lm4-FP-O3G" id="gIK-al-DSB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Shopping List" largeTitleDisplayMode="always" id="vDK-Ng-vuK"/>
+                    <navigationItem key="navigationItem" title="Shopping List" largeTitleDisplayMode="always" id="vDK-Ng-vuK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="B1I-8a-mWM">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="lm4-FP-O3G" id="uHj-XR-xCX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JY6-RH-Qbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

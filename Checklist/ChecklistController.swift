@@ -2,7 +2,7 @@
 //  ChecklistController.swift
 //  Checklist
 //
-//  Created by Anne Kristine on 07/10/2018.
+//  Created by Thomas Østlyng on 07/10/2018.
 //  Copyright © 2018 Thomas Østlyng. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 class ChecklistController: UITableViewController {
 	
 	
-	let itemArray = ["Buy Milk", "Buy bread", "Buy toothpaste"]
+	var itemArray = ["Buy Milk", "Buy bread", "Buy toothpaste"]
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -45,6 +45,30 @@ class ChecklistController: UITableViewController {
 		}
 
 		tableView.deselectRow(at: indexPath, animated: true)
+	}
+	
+	
+	//MARK - Add New Items
+	@IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+		
+		var textField = UITextField()
+		
+		let alert = UIAlertController(title: "Add new item", message: "", preferredStyle: .alert)
+		
+		let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+			self.itemArray.append(textField.text ?? "New item")
+			
+			self.tableView.reloadData()
+		}
+		
+		alert.addTextField { (alertTextfield) in
+			alertTextfield.placeholder = "Create new item"
+			textField = alertTextfield
+		}
+		
+		alert.addAction(action)
+		
+		present(alert, animated: true, completion: nil)
 	}
 	
 	
