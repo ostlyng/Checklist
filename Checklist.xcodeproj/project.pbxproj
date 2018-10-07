@@ -12,6 +12,7 @@
 		A334B882216A3956006DB496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A334B880216A3956006DB496 /* Main.storyboard */; };
 		A334B884216A3966006DB496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A334B883216A3966006DB496 /* Assets.xcassets */; };
 		A334B887216A3966006DB496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A334B885216A3966006DB496 /* LaunchScreen.storyboard */; };
+		A334B892216A4CD7006DB496 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A334B891216A4CD7006DB496 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A334B883216A3966006DB496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A334B886216A3966006DB496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A334B888216A3966006DB496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A334B891216A4CD7006DB496 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,46 @@
 			isa = PBXGroup;
 			children = (
 				A334B87C216A3956006DB496 /* AppDelegate.swift */,
-				A334B87E216A3956006DB496 /* ChecklistController.swift */,
-				A334B880216A3956006DB496 /* Main.storyboard */,
-				A334B883216A3966006DB496 /* Assets.xcassets */,
-				A334B885216A3966006DB496 /* LaunchScreen.storyboard */,
+				A334B890216A4CBC006DB496 /* Controller */,
+				A334B88E216A4CA9006DB496 /* Model */,
+				A334B88F216A4CB6006DB496 /* View */,
+				A36D707D216A4DAB000F029E /* Supporting Files */,
 				A334B888216A3966006DB496 /* Info.plist */,
 			);
 			path = Checklist;
+			sourceTree = "<group>";
+		};
+		A334B88E216A4CA9006DB496 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A334B891216A4CD7006DB496 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A334B88F216A4CB6006DB496 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A334B880216A3956006DB496 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A334B890216A4CBC006DB496 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A334B87E216A3956006DB496 /* ChecklistController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A36D707D216A4DAB000F029E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A334B883216A3966006DB496 /* Assets.xcassets */,
+				A334B885216A3966006DB496 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A334B87F216A3956006DB496 /* ChecklistController.swift in Sources */,
+				A334B892216A4CD7006DB496 /* Item.swift in Sources */,
 				A334B87D216A3956006DB496 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

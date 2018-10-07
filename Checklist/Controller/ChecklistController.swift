@@ -11,10 +11,15 @@ import UIKit
 class ChecklistController: UITableViewController {
 	
 	
-	var itemArray = ["Buy Milk", "Buy bread", "Buy toothpaste"]
+	var itemArray = [Item]()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		let newItem = Item()
+		newItem.title = "Buy eggs"
+		itemArray.append(newItem)
+		
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 	
@@ -28,7 +33,11 @@ class ChecklistController: UITableViewController {
 		
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistCell", for: indexPath)
 		
-		cell.textLabel?.text = itemArray[indexPath.row]
+		let item = itemArray[indexPath.row]
+	
+		cell.textLabel?.text = item.title
+		
+		cell.accessoryType = item.done ? .checkmark : .none
 		
 		return cell
 	}
@@ -36,13 +45,10 @@ class ChecklistController: UITableViewController {
 	
 	//MARK - Tableview Delegate Methods
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//		print(itemArray[indexPath.row])
+
+		itemArray[indexPath.row].done = !itemArray[indexPath.row].done
 		
-		if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-			tableView.cellForRow(at: indexPath)?.accessoryType = .none
-		} else {
-			tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-		}
+		tableView.reloadData()
 
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
@@ -56,7 +62,12 @@ class ChecklistController: UITableViewController {
 		let alert = UIAlertController(title: "Add new item", message: "", preferredStyle: .alert)
 		
 		let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-			self.itemArray.append(textField.text ?? "New item")
+			
+			let newItem = Item()
+			newItem.title = textField.text!
+			
+			
+			self.itemArray.append(newItem)
 			
 			self.tableView.reloadData()
 		}
